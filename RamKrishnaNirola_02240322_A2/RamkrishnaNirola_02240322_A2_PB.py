@@ -1,14 +1,14 @@
 class PokemonBinderManager:
-    """A program to manage a Pokémon binder with 8x8 pages."""
+    
 
     def __init__(self):
         """Initialize an empty binder."""
-        self.pokemon_binder = {}  # Dictionary to store Pokémon entries
-        self.total_slots_per_page = 64  # 8x8 grid per page
-        self.max_pokedex = 1025  # Maximum Pokedex number
+        self.pokemon_binder = {}  
+        self.total_slots_per_page = 64  
+        self.max_pokedex = 1025  
 
     def add_pokemon(self):
-        """Add a Pokémon card to the binder."""
+        
         try:
             pokedex_num = int(input(f"Enter Pokedex number (1-{self.max_pokedex}): "))
             
@@ -20,7 +20,7 @@ class PokemonBinderManager:
                 print(f"Pokedex #{pokedex_num} is already in the binder!")
                 return
 
-            # Calculate page, row, and column based on the 8x8 grid
+        
             page = (pokedex_num - 1) // self.total_slots_per_page + 1
             position_within_page = (pokedex_num - 1) % self.total_slots_per_page
             row = (position_within_page // 8) + 1
@@ -37,7 +37,7 @@ class PokemonBinderManager:
     def view_binder(self):
         """Display all Pokémon in the binder."""
         print("\nCurrent Binder Contents:")
-        print("-------------------------")
+    
 
         if not self.pokemon_binder:
             print("The binder is empty.")
